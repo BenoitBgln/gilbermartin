@@ -1,0 +1,232 @@
+@font-face {
+  font-family: 'AceSansDemo';
+  src: url('../fonts/ace-sans/AceSansDemo.eot');
+  src: url('../fonts/ace-sans/AceSansDemo.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ace-sans/AceSansDemo.woff2') format('woff2'),
+       url('../fonts/ace-sans/AceSansDemo.woff') format('woff'),
+       url('../fonts/ace-sans/AceSansDemo.ttf') format('truetype'),
+       url('../fonts/ace-sans/AceSansDemo.svg#AceSansDemo') format('svg');
+}
+
+.bar1, .bar2, .bar3 {
+    background-color: rgb(15,15,15);
+   transition: background-color 500ms, 0.4s;
+}
+
+.link {
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  line-height: 1;
+  color: #9e9ba4;
+  display: inline-block;
+}
+
+.link--kukuri {
+  text-transform: uppercase;
+  font-weight: 900;
+  overflow: hidden;
+  line-height: 1;
+  /*color: #b2b0a9;*/
+  color: black;
+}
+
+.link--kukuri:hover {
+  color: #b2b0a9 !important;
+}
+
+.link--kukuri::after {
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 100%;
+  top: 50%;
+  margin-top: -8px;
+  right: 0;
+  background: #F9F9F9;
+  transform: translate3d(-101%, 0, 0);
+  transition: transform 0.4s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.link--kukuri:hover::after {
+  transform: translate3d(101%, 0, 0);
+}
+
+
+/*text sliding*/
+
+.link--kukuri::before {
+  content: attr(data-letters);
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+ /* color: #424242;*/
+  color: rgb(55,55,55);
+  white-space: nowrap;
+  width: 0%;
+  transition: width 0.4s 0.3s;
+}
+
+.link--kukuri:hover::before {
+  width: 100%;
+}
+
+
+.bloc {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	
+}
+video {
+	position: fixed;
+	top: 0;
+	z-index: -5;
+	opacity: .7;
+}
+
+#header {
+	font-family: 'AceSansDemo';
+	font-size: 1.9em;
+	padding-left: 25%;
+	line-height: 2.2;
+}
+
+#header a {
+	color: black;
+	text-decoration: none;
+}
+
+.texte > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.texte .bloc {
+	position: relative;
+	width: 60%;
+	line-height: 1.9;
+	background-color: rgba(0,0,0,.1);
+	padding: 2% 4%;
+	backdrop-filter: blur(6px);
+	text-align: justify;
+	margin: auto;
+}
+
+.texte .bloc h3 {
+	font-family: 'AceSansDemo';
+	font-size: 2.5em;
+	margin: 0;
+	transform: translate(-13%, -10%);
+}
+
+#blc_contact {
+	background-color: white;
+}
+
+#blc_contact > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#blc_contact h3 {
+	font-family: 'AceSansDemo';
+	font-size: 2.5em;
+}
+
+#blc_contact a {
+	color: black;
+	text-decoration: none;
+}
+
+.images {
+	background-color: rgb(15,15,15);
+}
+
+
+blockquote p:before {
+	content: "\00275D";
+	font-size: 150%;
+	line-height: 0;
+	
+}
+
+blockquote p:after {
+	content: "\00275E";
+	font-size: 150%;
+	vertical-align: top;
+}
+
+.blc_img {
+	display: flex;
+	width: 70%;
+	margin: auto;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.item {
+	opacity: 0;
+	transform: scale(0.7);
+	transition: all 600ms 400ms;
+}
+
+.reveal {
+	transform: scale(1);
+	opacity: 1;
+}
+
+#textCritique {
+	margin: 300px auto;
+}
+
+@media screen and (max-width: 480px) {
+   .texte .bloc {
+   	width: 100%;
+   }
+
+   .texte .bloc h3 {
+   	transform: translate(0,0);
+   	text-align: left;
+   }
+
+   #header {
+   	line-height: 1;
+   	padding-left: 15px;
+   }
+
+   blockquote {
+   	margin: 0;
+   }
+
+   .blc_img {
+   	flex-wrap: wrap;
+   }
+
+   #textCritique {
+   	margin: auto;
+   }
+
+   .section, 
+   .section > div {
+   	height: auto !important;
+   }
+
+   #header,
+   #blc_contact {
+   	height: 100vh !important;
+   }
+
+   #blc_contact {
+   	display: flex;
+   }
+
+  .link--kukuri:hover::before {
+	  width: 0;
+	}
+}

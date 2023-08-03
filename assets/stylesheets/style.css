@@ -1,0 +1,180 @@
+@font-face {
+  font-family: "Yu Gothic";
+  src: url('../fonts/yu-gothic/yugothic.ttf') format('truetype');
+}
+
+body {
+	margin: 0;
+	font-family: "Yu Gothic", "Calibri light", "Calibri", "Arial";
+}
+
+/* Cache sombre actif quand le menu est coulissé */
+.cache {
+	margin: 0;
+	background-color: rgba(0,0,0,0.7);
+	z-index:5;
+    top: 0;
+    left: 0;
+	height:100vh;
+	width: 100vw;
+	position: fixed;
+	transition-duration: 0.3s;
+}
+
+
+/* Icone menu */
+#header__icon {
+    cursor: pointer;
+	position: fixed;
+	right: 4%;
+	top: 9%;
+	z-index: 102;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 37px;
+    height: 3px !important;
+    background-color: white;
+    margin: 9px 0;
+	position: relative !important;
+	top:0;
+	bottom: 0;
+    transition: all 0.4s;
+}
+
+#header__icon:hover .bar1 {
+	position: relative;
+	top: -4px;
+}
+
+#header__icon:hover .bar3 {
+	position: relative;
+	top: 4px;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 8px);
+    transform: rotate(-45deg) translate(-9px, 8px) ;
+	width: 40px;
+	background-color: rgb(15,15,15) !important;
+}
+
+.change:hover .bar1,
+.change:hover .bar3 {
+	position: relative;
+	top: 0 !important;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -9px) ;
+    transform: rotate(45deg) translate(-8px, -9px) ;
+	width: 40px;
+	background-color: rgb(15,15,15) !important;
+}
+
+
+/* Menu coulissant */
+.with--sidebar nav {
+    right: 0vw;
+  }
+  
+a:focus {
+	outline:0;
+}
+
+body > nav {
+	height: 75vh;
+	width: 25vw;
+	background-color: white; 
+	position: fixed;
+    right: -25vw;
+    top: 0;
+	transition-duration: 0.3s;
+	 
+	z-index: 101;
+	padding: 25vh  0 0 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size: 120%;
+
+}
+
+body > nav hr {
+	width: 85%;
+}
+
+body > nav ul {
+	padding: 10%;
+}
+
+
+body > nav li {
+	list-style-type: none;
+}
+
+
+body > nav ul a {
+	color: black;
+	text-decoration: none;
+}
+
+.accordeon ul {
+	padding-top:0 ;
+	padding-bottom:0;
+	margin: 0;
+	height: 0;
+    overflow: hidden;
+	 transition: all 0.25s ease-in-out 
+	
+}
+
+.accordeon:hover ul {
+	height: 9em;
+}
+
+body > nav ul a:hover {
+	color: rgb(240,195,0);
+}
+
+#share {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} 
+
+#share a {
+    margin: 0 3%;
+}
+
+.fa-facebook-f {
+    color: grey;
+    font-size: 165%;
+    font-weight:600;
+}
+
+.fa-facebook-f:hover {
+    color: rgb(59,89,152);
+}
+
+@media all and (max-width: 767px) {
+	body > nav {
+		width: 95vw;
+		right: -95vw;
+	}	
+
+	.accordeon ul {
+		height: 9em;
+	}
+}
+
+
+
+

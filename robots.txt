@@ -1,0 +1,6 @@
+User-agent: *
+Allow: http://gilbertmartin-peintre.fr/
+Allow: /series
+Allow: /l-artiste
+Sitemap: http://gilbertmartin-peintre.fr/sitemap.xml
+Sitemap: http://gilbertmartin-peintre.fr/sitemap-image.xml
